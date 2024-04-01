@@ -1,0 +1,87 @@
+@import "../../style.scss";
+.rightbar{
+    @include themify($themes){
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    @include mobile{
+        display: none;
+    }
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    .container{
+        padding: 20px;
+
+        .item{
+            padding: 20px;
+            -webkit-box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.09);
+            -moz-box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.09);
+            box-shadow: -1px 10px 5px 0px rgba(139, 137, 137, 0.044);
+            margin-bottom: 20px;
+            span{
+                color:themed("textColor");
+            }
+            .user{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 20px 0px;
+                .userInfo{
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    position: relative;
+                img{
+                    width:40px;
+                    height:40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                .online{
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                position: absolute;
+                background-color: limegreen;
+                top: 0;
+                left: 30px;
+                }
+                p{
+                color:themed("textColor"); 
+                }
+                span{
+                    font-weight: 500;
+                    color: themed("textColor");
+                }
+                }
+                .buttons{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    button{
+                        border: none;
+                        padding: 5px;
+                        color:whitesmoke ;
+                        cursor: pointer;
+                        border-radius: 3px;
+                        width: 60px;
+                        height: 30px;
+                        &:first-child{
+                            background-color: rgb(0, 153, 255);
+                        }
+                        &:last-child{
+                            background-color: rgba(255, 0, 38, 0.878);
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
